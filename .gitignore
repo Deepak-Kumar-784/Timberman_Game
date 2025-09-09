@@ -1,0 +1,4 @@
+*.cpp
+*.exe
+*.vscode
+!code.cpp
