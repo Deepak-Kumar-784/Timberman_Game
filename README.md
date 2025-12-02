@@ -11,18 +11,18 @@ This repo packages a simple C++ implementation with lightweight assets for backg
 - Lightweight C++ project structure for quick builds
 - Assets organized for easy swaps and modding
 
+This project now uses a single-file entrypoint (`src/code.cpp`) for simplicity.
+
 ## Project Structure
 
 ```
 .
 ├─ src/                 # C++ sources
-│  ├─ code.cpp          # Main/game loop
-│  ├─ cls_code.cpp      # Utility or class helpers
-│  ├─ ex_code.cpp       # Experiment/demo code
-│  └─ timebar.cpp       # Timer/score UI logic
+│  └─ code.cpp          # Single-file entrypoint with game loop
 ├─ assets/              # Game assets
 │  ├─ fonts/            # Fonts (e.g., KOMIKAP_.ttf)
 │  ├─ graphics/         # Sprites/backgrounds
+│  ├─ image/            # Misc images / placeholders
 │  └─ sound/            # SFX (chop/death/timeout)
 ├─ bin/                 # Local build artifacts (ignored)
 ├─ .vscode/             # Editor configs and build tasks
