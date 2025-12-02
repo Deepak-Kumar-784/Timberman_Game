@@ -1,4 +1,8 @@
-*.cpp
-*.exe
-*.vscode
-!code.cpp
+# Build artifacts
+/bin/
+
+# Editor configs
+.vscode/
+
+# OS-specific junk
+Thumbs.db
