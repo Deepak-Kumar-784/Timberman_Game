@@ -48,17 +48,21 @@ If you use a different compiler or platform, adapt the commands accordingly.
 3. The compiled `.exe` is created alongside the source file by the default task.
 4. Optionally copy it to `bin/` or run directly.
 
-### Option B — Manual compile (PowerShell)
+### Option B — Manual compile (simple, produces `a.exe`)
 
-From the project root:
+From the `src` folder (assets are loaded via `../assets/...`):
 
 ```powershell
-Set-Location "d:\Git Folder\Timber_prereq"
-"C:\msys64\ucrt64\bin\g++.exe" -fdiagnostics-color=always -g src\code.cpp -o bin\timberman.exe
-bin\timberman.exe
+Set-Location "d:\Git Folder\Timber_prereq\src"
+g++ code.cpp -lsfml-graphics -lsfml-system -lsfml-window -lsfml-audio
+./a.exe
 ```
 
-Adjust the entry file if your main is in another source.
+Notes:
+
+- The default `g++` behavior here creates `a.exe` in `src/`.
+- Running from `src/` ensures `../assets/...` paths resolve correctly.
+- To name the executable explicitly, use `-o` (e.g., `-o timber.exe`).
 
 ## Controls (typical)
 
@@ -77,8 +81,9 @@ Keep filenames consistent with the code or update paths accordingly.
 
 ## Development Notes
 
-- The workspace includes a VS Code C++ build task that compiles the currently open file. For multi-file builds, consider adding a dedicated task or a simple `Makefile`/CMake later.
-- Build outputs are kept in `bin/` locally (and typically ignored by git).
+- You can compile directly from `src/` (creating `a.exe`) or use the VS Code task.
+- If you prefer keeping binaries in `bin/`, compile with `-o ..\bin\timber.exe` and run from `bin/`.
+- For multi-file builds, consider adding a dedicated task or `Makefile`/CMake later.
 
 ## License
 
