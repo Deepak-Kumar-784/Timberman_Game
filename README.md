@@ -34,7 +34,7 @@ This repo packages a simple C++ implementation with lightweight assets for backg
 
 - Windows with PowerShell 5.1 (default in this workspace)
 - MSYS2 UCRT64 with `g++` (path used by VS Code task):
-	- `C:\msys64\ucrt64\bin\g++.exe`
+  - `C:\msys64\ucrt64\bin\g++.exe`
 - VS Code (for the preconfigured build task)
 
 If you use a different compiler or platform, adapt the commands accordingly.

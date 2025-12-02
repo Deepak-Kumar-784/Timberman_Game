@@ -30,11 +30,11 @@ int main()
     RenderWindow window(vm, "Timber!!!");
     View view(FloatRect(0, 0, 1920, 1080));
     window.setView(view);
-    
+
     // create a texture to hold a graphic on the GPU
     Texture textureBackground;
     // Load a graphics into the texture
-    textureBackground.loadFromFile("graphics/background.png");
+    textureBackground.loadFromFile("../assets/graphics/background.png");
     // Create a sprite to hold the texture
     Sprite spriteBackground;
     // Attach the texture to the sprite
@@ -44,14 +44,14 @@ int main()
 
     // Make a tree sprite
     Texture textureTree;
-    textureTree.loadFromFile("graphics/tree.png");
+    textureTree.loadFromFile("../assets/graphics/tree.png");
     Sprite spriteTree1;
     spriteTree1.setTexture(textureTree);
     spriteTree1.setPosition(810, 0);
 
     // Prepare the bee
     Texture textureBee;
-    textureBee.loadFromFile("graphics/bee.png");
+    textureBee.loadFromFile("../assets/graphics/bee.png");
     Sprite spriteBee;
     spriteBee.setTexture(textureBee);
     spriteBee.setPosition(0, 2000);
@@ -60,10 +60,9 @@ int main()
     // how fast can the bee fly
     float beeSpeed = 0.0f;
 
-
     // Prepare the cloud
     Texture textureCloud;
-    textureCloud.loadFromFile("graphics/cloud.png");
+    textureCloud.loadFromFile("../assets/graphics/cloud.png");
     Sprite spriteCloud1;
     Sprite spriteCloud2;
     Sprite spriteCloud3;
@@ -116,7 +115,7 @@ int main()
     Text scoreText;
     // We need to choose the font
     Font font;
-    font.loadFromFile("fonts/KOMIKAP_.ttf");
+    font.loadFromFile("../assets/fonts/KOMIKAP_.ttf");
     // Set the font to our text
     messageText.setFont(font);
     scoreText.setFont(font);
@@ -139,7 +138,7 @@ int main()
     scoreText.setPosition(20, 20);
     // For the branch
     Texture textureBranch;
-    textureBranch.loadFromFile("graphics/branch.png");
+    textureBranch.loadFromFile("../assets/graphics/branch.png");
     for (int i = 0; i < NUM_BRANCHES; i++)
     {
         branches[i].setTexture(textureBranch);
@@ -158,7 +157,7 @@ int main()
 
     // Prepare the player
     Texture texturePlayer;
-    texturePlayer.loadFromFile("graphics/player.png");
+    texturePlayer.loadFromFile("../assets/graphics/player.png");
     Sprite spritePlayer;
     spritePlayer.setTexture(texturePlayer);
     // spritePlayer.setPosition(580, 720);
@@ -170,14 +169,14 @@ int main()
 
     // Prepare the gravestone
     Texture textureRIP;
-    textureRIP.loadFromFile("graphics/rip.png");
+    textureRIP.loadFromFile("../assets/graphics/rip.png");
     Sprite spriteRIP;
     spriteRIP.setTexture(textureRIP);
     spriteRIP.setPosition(675, 2000);
 
     // Prepare the axe
     Texture textureAxe;
-    textureAxe.loadFromFile("graphics/axe.png");
+    textureAxe.loadFromFile("../assets/graphics/axe.png");
     Sprite spriteAxe;
     spriteAxe.setTexture(textureAxe);
     // Initial position of the Axe before start the game
@@ -189,7 +188,7 @@ int main()
 
     // Prepare the flying log
     Texture textureLog;
-    textureLog.loadFromFile("graphics/log.png");
+    textureLog.loadFromFile("../assets/graphics/log.png");
     Sprite spriteLog;
     spriteLog.setTexture(textureLog);
     spriteLog.setPosition(810, 720);
@@ -206,19 +205,19 @@ int main()
 
     // chop sound
     SoundBuffer chopBuffer;
-    chopBuffer.loadFromFile("sound/chop.wav");
+    chopBuffer.loadFromFile("../assets/sound/chop.wav");
     Sound chop;
     chop.setBuffer(chopBuffer);
 
     // death sound
     SoundBuffer deathBuffer;
-    chopBuffer.loadFromFile("sound/death.wav");
+    deathBuffer.loadFromFile("../assets/sound/death.wav");
     Sound death;
     death.setBuffer(deathBuffer);
 
     // outofTime sound
     SoundBuffer soundBuffer;
-    soundBuffer.loadFromFile("sound/out_of_time.wav");
+    soundBuffer.loadFromFile("../assets/sound/out_of_time.wav");
     Sound outOfTime;
     outOfTime.setBuffer(soundBuffer);
 
@@ -247,7 +246,7 @@ int main()
             // Reset the time and the score
             score = 0;
             timeRemaining = 6;
-            // Make all the branches disappear 
+            // Make all the branches disappear
             // starting in the second position
             for (int i = 1; i < NUM_BRANCHES; i++)
             {
