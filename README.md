@@ -33,8 +33,8 @@ This project now uses a single-file entrypoint (`src/code.cpp`) for simplicity.
 ## Requirements
 
 - Windows with PowerShell 5.1 (default in this workspace)
-- MSYS2 UCRT64 with `g++` (path used by VS Code task):
-  - `C:\msys64\ucrt64\bin\g++.exe`
+- **SFML 3** — the code targets the SFML 3 API (uses `sf::Sprite` constructor, `Font::openFromFile`, `std::optional<Event>`, etc.)
+- MSYS2 UCRT64 with `g++` and SFML 3 libraries installed (path used by VS Code task: `C:\msys64\ucrt64\bin\g++.exe`)
 - VS Code (for the preconfigured build task)
 
 If you use a different compiler or platform, adapt the commands accordingly.
@@ -53,13 +53,16 @@ If you use a different compiler or platform, adapt the commands accordingly.
 From the `src` folder (assets are loaded via `../assets/...`):
 
 ```powershell
-Set-Location "d:\Git Folder\Timber_prereq\src"
+Set-Location "<repo-root>\src"
 g++ code.cpp -lsfml-graphics -lsfml-system -lsfml-window -lsfml-audio
 ./a.exe
 ```
 
+Replace `<repo-root>` with the actual path where you cloned this repository.
+
 Notes:
 
+- This project targets **SFML 3**; ensure your installed SFML libraries are version 3.x.
 - The default `g++` behavior here creates `a.exe` in `src/`.
 - Running from `src/` ensures `../assets/...` paths resolve correctly.
 - To name the executable explicitly, use `-o` (e.g., `-o timber.exe`).
@@ -81,7 +84,7 @@ Keep filenames consistent with the code or update paths accordingly.
 
 ## Development Notes
 
-- You can compile directly from `src/` (creating `a.exe`) or use the VS Code task.
+- The codebase targets **SFML 3** — do not mix with SFML 2 headers or libraries.- You can compile directly from `src/` (creating `a.exe`) or use the VS Code task.
 - If you prefer keeping binaries in `bin/`, compile with `-o ..\bin\timber.exe` and run from `bin/`.
 - For multi-file builds, consider adding a dedicated task or `Makefile`/CMake later.
 
