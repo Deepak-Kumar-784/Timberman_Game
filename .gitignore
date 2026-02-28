@@ -1,8 +1,10 @@
 # Build artifacts
 /bin/
+/src/*.exe
 
 # Editor configs
 .vscode/
 
 # OS-specific junk
 Thumbs.db
+
